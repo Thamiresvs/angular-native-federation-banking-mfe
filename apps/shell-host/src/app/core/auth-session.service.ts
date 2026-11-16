@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { UserSessionContext } from '@fincore/mfe-contracts';
+import { UserSessionContext } from '../../../../../packages/mfe-contracts/index';
 
 @Injectable({ providedIn: 'root' })
 export class AuthSessionService {

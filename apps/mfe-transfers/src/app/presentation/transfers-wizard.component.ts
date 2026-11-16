@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
-import { dispatchMfeEvent, MFE_EVENTS, TransferCompletedPayload } from '@fincore/mfe-contracts';
+import { dispatchMfeEvent, MFE_EVENTS, TransferCompletedPayload } from '../../../../../packages/mfe-contracts/index';
 
 @Component({
   selector: 'app-transfers-wizard',

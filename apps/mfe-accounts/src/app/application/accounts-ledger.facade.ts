@@ -1,12 +1,12 @@
 import { Injectable, signal, computed } from '@angular/core';
-import { BankTransaction, MFE_EVENTS, TransferCompletedPayload } from '@fincore/mfe-contracts';
+import { BankTransaction, MFE_EVENTS, TransferCompletedPayload } from '../../../../../packages/mfe-contracts/index';
 
 const INITIAL_TRANSACTIONS: BankTransaction[] = [
   {
     id: 'tx-1001',
     date: '2026-11-15T14:20:00Z',
     description: 'Enterprise Architecture Consulting',
-    counterparty: 'Spassu Tecnologia S.A.',
+    counterparty: 'GOOGLE Tecnologia S.A.',
     category: 'TED',
     type: 'CREDIT',
     amount: 18500.00,

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AuthSessionService } from './core/auth-session.service';
-import { MFE_EVENTS, TransferCompletedPayload } from '@fincore/mfe-contracts';
+import { MFE_EVENTS, TransferCompletedPayload } from '../../../../packages/mfe-contracts/index';
 
 @Component({
   selector: 'app-root',
