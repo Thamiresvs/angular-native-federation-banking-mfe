@@ -27,7 +27,7 @@
           "builder": "@angular-architects/native-federation:build",
           "options": {
             "target": "shell-host:serve-original:development",
-            "rebuildDelay": 0,
+            "rebuildDelay": 500,
             "dev": true,
             "port": 4200
           }

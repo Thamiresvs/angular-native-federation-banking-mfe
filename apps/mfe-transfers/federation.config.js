@@ -6,7 +6,7 @@ module.exports = withNativeFederation({
     './Component': './src/app/presentation/transfers-wizard.component.ts',
   },
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
   },
   skip: [
     'rxjs/ajax',

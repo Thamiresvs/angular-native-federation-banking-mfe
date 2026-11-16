@@ -13,7 +13,10 @@ export const routes: Routes = [
     loadComponent: () =>
       loadRemoteModule('mfe-accounts', './Component')
         .then((m) => m.AccountsDashboardComponent)
-        .catch(() => RemoteFallbackComponent),
+        .catch((err) => {
+          console.error('[Shell] Falha ao carregar mfe-accounts:', err);
+          return RemoteFallbackComponent;
+        }),
     data: { remoteName: 'mfe-accounts (:4201)' },
   },
   {
@@ -21,7 +24,10 @@ export const routes: Routes = [
     loadComponent: () =>
       loadRemoteModule('mfe-transfers', './Component')
         .then((m) => m.TransfersWizardComponent)
-        .catch(() => RemoteFallbackComponent),
+        .catch((err) => {
+          console.error('[Shell] Falha ao carregar mfe-transfers:', err);
+          return RemoteFallbackComponent;
+        }),
     data: { remoteName: 'mfe-transfers (:4202)' },
   },
   {
