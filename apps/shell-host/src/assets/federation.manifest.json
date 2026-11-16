@@ -1,0 +1,4 @@
+{
+  "mfe-accounts": "http://localhost:4201/remoteEntry.json",
+  "mfe-transfers": "http://localhost:4202/remoteEntry.json"
+}

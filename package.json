@@ -1,0 +1,18 @@
+{
+  "name": "angular-native-federation-banking-mfe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise Banking Micro Frontend MVP using Angular 18+ Standalone, Signals, and Native Federation",
+  "scripts": {
+    "install:all": "npm install && npm --prefix apps/shell-host install && npm --prefix apps/mfe-accounts install && npm --prefix apps/mfe-transfers install",
+    "start": "concurrently -k -n SHELL,ACCOUNTS,TRANSFERS -c cyan,green,magenta \"npm --prefix apps/shell-host start\" \"npm --prefix apps/mfe-accounts start\" \"npm --prefix apps/mfe-transfers start\"",
+    "start:shell": "npm --prefix apps/shell-host start",
+    "start:accounts": "npm --prefix apps/mfe-accounts start",
+    "start:transfers": "npm --prefix apps/mfe-transfers start",
+    "build:all": "npm --prefix apps/mfe-accounts run build && npm --prefix apps/mfe-transfers run build && npm --prefix apps/shell-host run build",
+    "test": "npm --prefix apps/shell-host test -- --watch=false && npm --prefix apps/mfe-accounts test -- --watch=false && npm --prefix apps/mfe-transfers test -- --watch=false"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

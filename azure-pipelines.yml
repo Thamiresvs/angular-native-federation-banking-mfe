@@ -1,0 +1,43 @@
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+strategy:
+  matrix:
+    ShellHost:
+      appPath: 'apps/shell-host'
+      artifactName: 'shell-host-dist'
+    MfeAccounts:
+      appPath: 'apps/mfe-accounts'
+      artifactName: 'mfe-accounts-dist'
+    MfeTransfers:
+      appPath: 'apps/mfe-transfers'
+      artifactName: 'mfe-transfers-dist'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '20.x'
+    displayName: 'Install Node.js 20.x'
+
+  - script: |
+      cd $(appPath)
+      npm ci
+    displayName: 'Install Dependencies ($(appPath))'
+
+  - script: |
+      cd $(appPath)
+      npm run build
+    displayName: 'Build Production ESM Bundle ($(appPath))'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(appPath)/dist'
+      ArtifactName: '$(artifactName)'
+      publishLocation: 'Container'
+    displayName: 'Publish MFE Artifact'
