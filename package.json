@@ -13,6 +13,7 @@
     "test": "npm --prefix apps/shell-host test -- --watch=false && npm --prefix apps/mfe-accounts test -- --watch=false && npm --prefix apps/mfe-transfers test -- --watch=false"
   },
   "devDependencies": {
+    "@angular/build": "^18.2.0",
     "concurrently": "^9.0.0"
   }
 }
